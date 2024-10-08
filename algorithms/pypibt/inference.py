@@ -53,7 +53,7 @@ class PIBTInference:
                     starts.append(global_xy[agent_idx])
                     goals.append(global_target_xy[agent_idx])
                 pibt = PIBT(grid, starts, goals)
-                configs = pibt.run()
+                configs = pibt.run(max_timestep=1)
                 action = self.actions[(configs[1][0][0] - configs[0][0][0], 
                                     configs[1][0][1] - configs[0][0][1])] 
                 actions.append(action)
